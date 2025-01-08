@@ -11,21 +11,10 @@ set $mod Mod4
 
 # Your preferred terminal emulator
 set $term foot
+
 # Your preferred application launcher
-
-# wmenu
-# set $menu wmenu-run
-
-# sway-launcher-desktop
-# for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-# set $menu exec $term -a launcher -e sway-launcher-desktop
-
-# tofi
-# set $menu tofi-drun | xargs swaymsg exec --
-
 # fuzzel
 set $menu fuzzel
-
 
 # set $rmenu tofi-run | xargs swaymsg exec --
 # bindsym $mod+Shift+d exec $rmenu
@@ -51,20 +40,28 @@ default_border pixel 0
 font Droid Sans Mono 10
 
 ### Idle configuration
+
+set $lock swaylock
 #
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+         timeout 300 '$lock' \
+         timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+         before-sleep '$lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-bindsym XF86Sleep exec swaylock -f -c 000000
-bindsym $mod+l exec swaylock -f -c 000000
+bindsym $mod+l exec $lock
+bindsym XF86Sleep exec swayidle -w \
+         timeout 0 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+         before-sleep '$lock'
+
+# bindsym XF86Sleep exec $lock
 
 
 ### Input configuration
@@ -255,6 +252,14 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 workspace email output DP-1
 assign [app_id="thunderbird"] workspace email
 bindsym $mod+t workspace email
+
+
+#
+# Music Controls
+#
+bindsym XF86AudioPrev exec playerctl next
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl previous
 
 #
 # Status Bar:
