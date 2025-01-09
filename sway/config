@@ -262,6 +262,11 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl previous
 
 #
+# Insync
+#
+exec insync start
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
