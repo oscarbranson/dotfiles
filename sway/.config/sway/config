@@ -208,7 +208,6 @@ mode "resize" {
     bindsym Shift+Up resize shrink height 10px
     bindsym Shift+Right resize grow width 10px
 
-
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
