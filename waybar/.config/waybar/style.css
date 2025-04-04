@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Droid Sans Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     border-radius: 5px;
 }
 
@@ -92,6 +92,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
+    background-color: #bbccdd;
     padding: 0 10px;
     margin: 6px 3px;
     color: #333333;
@@ -113,7 +114,6 @@ button:hover {
 }
 
 #clock {
-    background-color: #bbccdd;
 }
 
 label:focus {
@@ -121,32 +121,25 @@ label:focus {
 }
 
 #cpu {
-    background-color: #bbccdd;
     color: #000000;
 }
 
 #memory {
-    background-color: #bbccdd;
 }
 
 #disk {
-    background-color: #bbccdd;
 }
 
 #backlight {
-    background-color: #bbccdd;
 }
 
 #network {
-    background-color: #bbccdd;
 }
 
 #network.disconnected {
-    background-color: #bbccdd;
 }
 
 #pulseaudio {
-    background-color: #bbccdd;
     color: #333333;
 }
 
@@ -156,17 +149,14 @@ label:focus {
 } */
 
 #pulseaudio.muted {
-    background-color: #bbccdd;
     color: #333333;
 }
 
 #wireplumber {
-    background-color: #fff0f5;
     color: #333333;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
 }
 
 #custom-media {
@@ -176,23 +166,20 @@ label:focus {
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
 }
 
 #temperature {
-    background-color: #f0932b;
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
 }
 
 #tray {
     background-color: #2980b9;
+    background-color: #f53c3c;
 }
 
 #tray > .passive {
