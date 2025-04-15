@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Starship
 eval "$(starship init zsh)"
+
+# profile
+source ~/.profile
