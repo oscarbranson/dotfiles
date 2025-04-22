@@ -1,14 +1,20 @@
+@define-color cbkg #bbccdd; 
+@define-color calert #2980b9;
+@define-color ctext #ffffff;
+@define-color clabel rgba(43, 48, 59, 0.9);
+@define-color cbar rgba(43, 48, 59, 0.9);
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Droid Sans Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: "Droid Sans", FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
     font-size: 12px;
     border-radius: 5px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.9);
+    background-color: @cbar;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
+    color: @ctext;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
@@ -27,22 +33,13 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
-    background-color: #bbccdd;
+    background-color: @cbkg;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -54,7 +51,7 @@ button:hover {
 #workspaces button {
     padding: 0 0.4em;
     background-color: transparent;
-    color: #ffffff;
+    color: @ctext;  
 }
 
 #workspaces button:hover {
@@ -62,16 +59,16 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: @calert;
     box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @calert;
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: @calert;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -92,10 +89,10 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    background-color: #bbccdd;
+    background-color: @cbkg;
     padding: 0 10px;
     margin: 6px 3px;
-    color: #333333;
+    color: @clabel;
 }
 
 #window,
@@ -114,6 +111,7 @@ button:hover {
 }
 
 #clock {
+    font-weight: bold;
 }
 
 label:focus {
@@ -121,7 +119,6 @@ label:focus {
 }
 
 #cpu {
-    color: #000000;
 }
 
 #memory {
@@ -140,7 +137,6 @@ label:focus {
 }
 
 #pulseaudio {
-    color: #333333;
 }
 
 /* you can set a style on hover for any module like this */
@@ -149,19 +145,15 @@ label:focus {
 } */
 
 #pulseaudio.muted {
-    color: #333333;
 }
 
 #wireplumber {
-    color: #333333;
 }
 
 #wireplumber.muted {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
     min-width: 100px;
 }
 
@@ -177,57 +169,41 @@ label:focus {
 #temperature.critical {
 }
 
-#tray {
-    background-color: #2980b9;
-    background-color: #f53c3c;
-}
-
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @calert;
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: @calert;
 }
 
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
 }
 
 #language {
-    background: #00b093;
-    color: #740864;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
@@ -271,5 +247,4 @@ label:focus {
 }
 
 #custom-notification {
-    font-family: "Droid Sans Mono";
-  }
+}
