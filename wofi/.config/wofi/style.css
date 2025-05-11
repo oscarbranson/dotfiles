@@ -6,8 +6,8 @@
 
 window {
   margin: 0px;
-  background-color: rgba(50,50,50,0.9);
-  border: 5px solid rgba(255,255,255,0.7);
+  background-color: rgba(0,0,42,0.9);
+  border: 5px solid rgba(200,200,255,0.7);
   border-radius: 15px;
   color: rgba(255,255,255,0.5);
 }
@@ -16,7 +16,7 @@ window {
     padding: 4px;
     margin: 10px;
     border: none;
-    background-color: rgba(30,30,30,0.9);
+    background-color: rgba(255,255,255,0.1);
     font-weight: bold;
    	outline: none;
     border-radius: 15px;
@@ -48,9 +48,10 @@ window {
 }
 
 #entry:selected {
-    background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.25);
+  outline: none;
 }
 
 #text:selected {
-    color: #333333;
+    color: white;
 }
